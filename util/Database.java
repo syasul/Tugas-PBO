@@ -12,9 +12,9 @@ public class Database {
         try {
             if (connection == null) {
                 connection = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/pbo",
+                        "jdbc:mysql://localhost:3306/newtoko",
                         "root",
-                        "root"
+                        ""
                 );
             }
             return connection;
