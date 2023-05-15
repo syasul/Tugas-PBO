@@ -3,6 +3,7 @@ package models.dao;
 import models.entity.Employee;
 import util.Queries;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -86,4 +87,6 @@ public class EmployeeDao {
 
         return employeeList;
     }
+    
+    
 }

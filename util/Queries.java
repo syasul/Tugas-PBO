@@ -10,6 +10,8 @@ public class Queries {
                     "WHERE id = ?",
             deleteEmployee = "DELETE FROM employee " +
                     "WHERE id = ?",
+            checkUsername = "SELECT username, password FROM employee" + 
+                    "WHERE username = ?",
             createStuff = "INSERT INTO stuff " +
                     "(code, name, price, quantity, brand)" +
                     " VALUES (?,?,?,?,?)",
@@ -17,5 +19,8 @@ public class Queries {
                     "SET name = ?, price = ?, quantity = ?, brand = ?" +
                     " WHERE code = ?",
             deleteStuff = "DELETE FROM stuff " +
-                    "WHERE code = ?";
+                    "WHERE code = ?",
+            lupaPass = "UPDATE employee " +
+                    "SET password = ?" +
+                    "WHERE username = ?";
 }

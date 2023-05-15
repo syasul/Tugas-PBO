@@ -82,6 +82,11 @@ public class EmployeeForm extends javax.swing.JFrame {
     public JButton getClose() {
         return close;
     }
+    
+    public JButton getCheck(){
+        return check;
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -92,6 +97,7 @@ public class EmployeeForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        gender = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -115,9 +121,9 @@ public class EmployeeForm extends javax.swing.JFrame {
         deleting = new javax.swing.JButton();
         clean = new javax.swing.JButton();
         close = new javax.swing.JButton();
+        check = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();
-        gender = new ButtonGroup();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -168,8 +174,10 @@ public class EmployeeForm extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setText("PASSWORD");
 
+        gender.add(male);
         male.setText("LAKI-LAKI");
 
+        gender.add(female);
         female.setText("PEREMPUAN");
 
         adding.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -187,8 +195,7 @@ public class EmployeeForm extends javax.swing.JFrame {
         close.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         close.setText("Keluar");
 
-        gender.add(male);
-        gender.add(female);
+        check.setText("cek");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -205,8 +212,11 @@ public class EmployeeForm extends javax.swing.JFrame {
                             .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(check, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(position)
-                            .addComponent(username)
                             .addComponent(password, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(male, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -269,11 +279,13 @@ public class EmployeeForm extends javax.swing.JFrame {
                     .addComponent(male)
                     .addComponent(female)
                     .addComponent(close))
-                .addGap(28, 28, 28)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel7)
-                    .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(check)))
+                .addGap(28, 28, 28)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -282,6 +294,18 @@ public class EmployeeForm extends javax.swing.JFrame {
 
         nik.getAccessibleContext().setAccessibleName("nik");
         nik.getAccessibleContext().setAccessibleDescription("");
+
+        table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
         jScrollPane1.setViewportView(table);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -351,11 +375,13 @@ public class EmployeeForm extends javax.swing.JFrame {
     private javax.swing.JButton adding;
     private javax.swing.JTextField address;
     private javax.swing.JButton changging;
+    private javax.swing.JButton check;
     private javax.swing.JButton clean;
     private javax.swing.JButton close;
     private javax.swing.JButton deleting;
     private javax.swing.JRadioButton female;
     private javax.swing.JTextField fieldName;
+    private javax.swing.ButtonGroup gender;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -373,6 +399,5 @@ public class EmployeeForm extends javax.swing.JFrame {
     private javax.swing.JTextField position;
     private javax.swing.JTable table;
     private javax.swing.JTextField username;
-    private ButtonGroup gender;
     // End of variables declaration//GEN-END:variables
 }

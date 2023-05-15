@@ -10,10 +10,12 @@ import view.EmployeeForm;
 import javax.swing.*;
 import java.awt.event.*;
 import java.util.Arrays;
+import models.dao.AccountDao;
 
 public class EmployeeController implements Controller {
     private final EmployeeForm view;
     private final EmployeeDao employeeDao = new EmployeeDao(Database.getConnection());
+    private final AccountDao accountDao = new AccountDao(Database.getConnection());
     private final Employee employee = Employee.create();
     private String gender;
 
@@ -82,6 +84,15 @@ public class EmployeeController implements Controller {
         view.getClose().addActionListener(e -> {
             var status = JOptionPane.showConfirmDialog(view, "Yakin ingin keluar?");
             if (status == 0) view.dispose();
+        });
+        
+        view.getCheck().addActionListener(e -> {
+            var isExist = accountDao.isUsernameExist(view.getUsername().getText());
+
+            if (isExist) {
+                JOptionPane.showMessageDialog(view, "Username " + view.getUsername().getText() + " sudah terdaftar!");
+                view.getUsername().setText("");
+            }
         });
     }
 
